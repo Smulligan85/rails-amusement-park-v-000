@@ -1,3 +1,4 @@
+<%= form_for @user do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label "Height (in inches)" %><br>
@@ -10,3 +11,5 @@
   <%= f.text_field :tickets %><br>
   <%= f.label "Check box if you are a theme park owner" %>
   <%= f.check_box :admin %><br>
+  <%= f.submit @user.new_record? ? "Create User" : "Update User" %>
+<% end %>
