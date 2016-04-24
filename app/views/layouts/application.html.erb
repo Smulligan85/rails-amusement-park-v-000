@@ -23,6 +23,14 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            <% if !logged_in? %>
+              <li><a href="<%= new_user_path %>">Sign up</a></li>
+              <li><a href="<%= signin_path %>">Sign in</a></li>
+            <% else %>
+              <li><a href="<%= user_path(current_user) %>">Hello, <%=current_user.name %>!</a></li>
+              <li><a href="<%= attractions_path %>">Attractions</a></li>
+              <li><%= link_to "Log Out", signout_path, method: :post %></li>
+            <% end %>
            <!--  nav here -->
           </ul>
         </div><!--/.nav-collapse -->

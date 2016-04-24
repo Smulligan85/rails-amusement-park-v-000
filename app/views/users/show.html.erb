@@ -1,0 +1,19 @@
+<div class="container">
+  <% if flash[:message] %>
+    <%= flash[:message] %>
+  <% end %>
+  <div class="center row">
+    <div class="pic col-md-4">
+      <img src="http://8900-presscdn-0-84.pagely.netdna-cdn.com/wp-content/themes/beautycon/assets/img/avatar-grey.png" alt="Profile Photo" height="250">
+    </div>
+    <div class="info col-md-4">
+      <p><strong>ADMIN</strong></p>
+      <p><strong>Name:</strong>  <%= current_user.name %></p>
+      <p><strong>Tickets:</strong>  <%= current_user.tickets %></p>
+      <p><strong>Mood:</strong>  <%= current_user.mood %></p>
+      <p><strong>Height:</strong>  <%= current_user.height %></p>
+      <p><a href="<%= edit_user_path(current_user) %>">Edit</a></p>
+      <p><a href="<%= attractions_path %>">See attractions</a></p>
+    </div>
+  </div>
+</div>
